@@ -1,11 +1,11 @@
 # Installing Faspex in a VM
 
-## Requirements:
+## [Docs](https://www.ibm.com/docs/en/aspera-faspex/5.0?topic=installation-upgrades)
+
+## System for these instructions:
 - Red Hat Enterprise Linux release 8.5 (Ootpa)
 - 2 CPU, 8GB RAM, 100GB storage
 - Ports open: 22, 80, 443, 8443, 9092, 33001
-
-## [Documentation](https://www.ibm.com/docs/en/aspera-faspex/5.0?topic=upgrades-installing-faspex-first-time) 
 
 ## File download links:
 - General Aspera download page [here](https://www.ibm.com/products/aspera/downloads)

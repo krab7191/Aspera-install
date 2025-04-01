@@ -1,11 +1,13 @@
 # Installing the HSTS in a VM
+A short cheat sheet for install & config. Adapt to your use case & security
 
-## Requirements:
+## [Docs](https://www.ibm.com/docs/en/ahts/4.4.x?topic=linux-installation-upgrades)
+## [User management docs](https://www.ibm.com/docs/en/ahts/4.4.x?topic=linux-set-up-users-groups-from-command-line) 
+
+## System for these instructions:
 - Red Hat Enterprise Linux release 8.5 (Ootpa)
 - 2 CPU, 8GB RAM, 100GB storage
 - Ports open: 22, 80, 443, 8443, 9092, 33001
-
-## [User management documentation](https://www.ibm.com/docs/en/ahts/4.4.x?topic=linux-set-up-users-groups-from-command-line) 
 
 ## File download links:
 - General Aspera download page [here](https://www.ibm.com/products/aspera/downloads)
@@ -34,7 +36,7 @@
 2. Create a console admin transfer user:
    - `useradd consoletransferadmin`
    - `asconfigurator -F \ "set_user_data;user_name,consoletransferadmin;absolute,/tmp/"`
-   - `/opt/aspera/bin/asnodeadmin -a -u consoletransferadmin -p consolenodePW123$ -x consoletransferadmin --acl-set "admin,impersonation"`
+   - `/opt/aspera/bin/asnodeadmin -a -u consoletransferadmin -p <PassWord> -x consoletransferadmin --acl-set "admin,impersonation"`
 3. Check users: `/opt/aspera/bin/asnodeadmin -l`
 
 ### Prepare HSTS for Faspex Integration
@@ -51,7 +53,7 @@
 4. Define token authorization for faspextransferadmin:
    - `asconfigurator -F "set_user_data;user_name,faspextransferadmin;authorization_transfer_in_value,token;authorization_transfer_out_value,token"`
 5. Set token encryption string:
-   - `asconfigurator -F "set_user_data;user_name,faspextransferadmin;token_encryption_key,14ba8b99-8f19-4151-ae0a-c8db9c6807c5"`
+   - `asconfigurator -F "set_user_data;user_name,faspextransferadmin;token_encryption_key,<EncryptionKeyHere>"`
 6. Define docroot storage for user:
    - `asconfigurator -F "set_user_data;user_name,faspextransferadmin;absolute,/data/faspex_data/"`
 7. Check everything is set properly:
@@ -64,5 +66,3 @@
 8. Create a regular node user:
    - `/opt/aspera/bin/asnodeadmin -a -u faspexnodeuser -p faspexnodePW123$ -x faspextransferadmin`
    - List users: `/opt/aspera/bin/asnodeadmin -l`
-
-

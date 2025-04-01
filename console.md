@@ -1,11 +1,11 @@
 # Installing Console in a VM
 
-## Requirements:
+## [Documentation](https://www.ibm.com/docs/en/aspera-console/3.4?topic=linux-installing-console)
+
+## System for these instructions:
 - Red Hat Enterprise Linux release 8.5 (Ootpa)
 - 2 CPU, 8GB RAM, 100GB storage
 - Ports open: 22, 80, 443, 8443, 9092, 33001
-
-## [Documentation](https://www.ibm.com/docs/en/aspera-console/3.4?topic=linux-installing-console)
 
 ## File download links:
 - General Aspera download page [here](https://www.ibm.com/products/aspera/downloads)
